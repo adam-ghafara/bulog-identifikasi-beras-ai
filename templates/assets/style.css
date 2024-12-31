@@ -1,0 +1,221 @@
+.landing-page {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .landing-page .div {
+    background-color: #d9d9d9;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+  }
+  
+  .landing-page .overlap {
+    position: absolute;
+    width: 1207px;
+    height: 897px;
+    top: 183px;
+    left: 361px;
+    background-color: #757575;
+    border-radius: 30px 30px 0px 0px;
+  }
+  
+  .landing-page .overlap-group {
+    position: absolute;
+    width: 499px;
+    height: 208px;
+    top: 29px;
+    left: 354px;
+  }
+  
+  .landing-page .logo-BULOG-indo {
+    width: 499px;
+    height: 172px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .landing-page .text-wrapper {
+    position: absolute;
+    top: 158px;
+    left: 89px;
+    font-family: "Lexend Peta-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #22548b;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .group {
+    position: absolute;
+    width: 205px;
+    height: 58px;
+    top: 632px;
+    left: 497px;
+  }
+  
+  .landing-page .div-wrapper {
+    position: relative;
+    width: 203px;
+    height: 58px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+  }
+  
+  .landing-page .text-wrapper-2 {
+    position: absolute;
+    top: 9px;
+    left: 44px;
+    font-family: "Lexend Peta-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-3 {
+    position: absolute;
+    top: 269px;
+    left: 238px;
+    font-family: "Kanit-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .ini-adalah-web {
+    position: absolute;
+    top: 370px;
+    left: 152px;
+    font-family: "Kanit-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .overlap-2 {
+    position: absolute;
+    width: 1920px;
+    height: 88px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+  }
+  
+  .landing-page .img {
+    width: 183px;
+    height: 66px;
+    top: 11px;
+    left: 11px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .landing-page .text-wrapper-4 {
+    position: absolute;
+    top: 18px;
+    left: 222px;
+    font-family: "Lexend Peta-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #22548b;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  /* Inject original CSS here */
+  
+  /* New and modified styles */
+  .landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 88px; /* Height of the header */
+  }
+  
+  .hero {
+    width: 1207px;
+    padding: 29px;
+    background-color: #757575;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  
+  .hero-logo {
+    width: 499px;
+    height: 172px;
+    object-fit: cover;
+  }
+  
+  .hero-subtitle {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    color: #22548b;
+    font-size: 40px;
+  }
+  
+  .hero-title {
+    font-family: "Kanit-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  
+  .hero-description {
+    font-family: "Kanit-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  @media (max-width: 1200px) {
+    .hero {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .hero-logo {
+      width: 100%;
+      height: auto;
+    }
+  
+    .hero-title {
+      font-size: 48px;
+    }
+  
+    .hero-description {
+      font-size: 24px;
+    }
+  }
+  
