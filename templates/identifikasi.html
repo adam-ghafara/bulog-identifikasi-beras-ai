@@ -28,10 +28,10 @@
       <section class="identification-section">
         <h2 class="main-title">Identifikasi Kualitas Beras</h2>
         <h3 class="subtitle">Upload Gambar Sampel Disini</h3>
-
+        <h4 class="p-caption-text" style="margin-left: 15px;">Masukkan</h4>
         <!-- Upload Container -->
         <div class="flex items-center justify-center w-full h-50">
-          <form action="">
+          <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
               <label for="dropzone-file" id="dropzone" class="flex flex-col items-center justify-center w-full h-70 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                   <div class="flex flex-col items-center justify-center pt-5 pb-6">
                       <img id="icon" src="./assets/images/icons/file-arrow-up-solid.svg" style="height: 10ch;" alt="Upload Icon">
@@ -45,10 +45,8 @@
               </label>
               <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" accept="image/*">
             </div>
-              <div class="flex justify-center">
-                <a href="">
-                  <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Identifikasi</button>
-                </a>
+              <div class="flex justify-center mt-5">
+                  <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Identifikasi</button>
               </div>
             </form>
           </div>

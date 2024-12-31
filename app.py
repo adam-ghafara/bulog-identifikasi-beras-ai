@@ -1,4 +1,3 @@
-# Flask Web Render
 import base64
 from flask import Flask, render_template
 from keras.models import load_model
@@ -10,7 +9,11 @@ import io
 
 app = Flask(__name__)
 
-# Load the model
+########################
+#### 
+#### LOAD MODEL
+####
+########################
 model = load_model('model.h5')
 
 class_labels = [0,1,2]
@@ -21,41 +24,45 @@ def image_loader(image, target):
     image = np.expand_dims(image, axis=0)
     return image
 
-# Web Render
+########################
+#### 
+#### RENDER FLASK PAGE
+####
+########################
+
 
 # Landing Page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Login Page
-@app.route('/login')
-def login():
-    return render_template('login.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 # Identify page
 @app.route('/identify', methods=['GET', 'POST'])
 def identify():
     if request.method == 'POST':
-        file = request.files['file']
+        file = request.files['image']
         if file:
-            # PIL Image
-            img = Image.open(file)
-            # Image Preprocessing
-            preprocessing = prepare_image(img, target=(256, 256))
-            # Class Prediction
-            predict = model.predict(preprocessing)
-            # Get the class label
-            predict_label = class_labels[np.argmax(predict)]
-            # Convert image for display in html
+            img = Image.open(io.BytesIO(file.read()))
+            # Preprocess the image
+            preprocessed_image = prepare_image(img, target=(256, 256))
+            preprocessed_image = np.array(preprocessed_image, dtype='float32')
+            # Predict the image
+            prediction = model.predict(preprocessed_image)
+            # Get class with highest probability
+            predicted_class = class_labels[np.argmax(prediction)]
+            # Display to HTML
             img.seek(0)
-            image_data = io.BytesIO()
-            img.save(image_data, format='PNG')
-            image_data = image_data.getvalue()
-            img_data = "data:image/png;base64," + base64.b64encode(image_data).decode('utf-8')
-            model_accuracy = np.max(predict) * 100
-            return render_template('identify.html', img_data=img_data, predict_label=predict_label, model_accuracy=model_accuracy)
-    return render_template('identify.html')
+            image_stream = io.BytesIO()
+            img.save(image_stream, format='PNG')
+            image_render = image_stream.getvalue()
+            image_render = "data:image/png;base64," + base64.b64encode(image_render).decode('utf-8')
+            model_accuracy = prediction[0][predicted_class] * 100
+            return render_template('hasil-identifikasi.html', image=image_render, predicted_class=predicted_class, model_accuracy=model_accuracy)
+    return render_template('identifikasi.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
