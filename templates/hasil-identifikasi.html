@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Identifikasi Kualitas Beras</title>
-    <link rel="stylesheet" href="./assets/globals-identify.css" />
-    <link rel="stylesheet" href="./assets/style-identify.css" />
+    <link rel="stylesheet" href="../static/assets/globals-identify.css" />
+    <link rel="stylesheet" href="../static/assets/style-identify.css" />
         <!-- Tailwind CSS -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <!-- Flowbite Tailwind CSS -->
@@ -15,32 +15,39 @@
     <!-- Header -->
     <header class="bg-white text-dark">
       <div class="container mx-auto flex justify-between items-center">
-        <a href="./index.html" class="text-2xl font-bold"><img src="./assets/images/bulog-logos.png" style="width: 17%;" alt=""></a>
+        <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
         <nav>
           <ul class="flex space-x-4">
-            <li><a href="./identifikasi.html" class="hover:text-gray-300">Identifikasi</a></li>
-            <li><a href="./tentang.html" class="hover:text-gray-300">Tentang</a></li>
+            <li><a href="/identifikasi" class="hover:text-gray-300">Identifikasi</a></li>
+            <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <main class="identify-page">
+    <!-- Identification Result Page -->
+     <main class="identify-page">
       <section class="identification-section">
-        <!-- Result Section -->
-        <div class="container mx-auto">
-          <div class="result-card">
-            <h2 class="main-title">Hasil Identifikasi</h2>
-            <div class="result-content">
-              <div class="result-image">
-                <img src="" alt="Beras" />
-              </div>
-              <div class="result-info">
-                <h3 class="h-caption-label">Beras Medium</h3>
-              </div>
-              <p class="p-caption-text">Beras ini adalah beras medium. Terdapat ciri yang menunjukkan bahwa beras ini adalah medium:</p>
-            </div>
-          </div>
-      </main>
+        <h2 class="main-title">Hasil Identifikasi Kualitas Beras</h2>
+        <div class="flex items-center justify-center w-full h-50">
+          <img src="{{ image }}" alt="Beras" class="w-96 h-96 object-cover rounded-lg">
+        </div>
+        <h3 class="h-caption-label">Hasil Identifikasi</h3>
+        <h3 class="p-caption-text">Kondisi Beras Dominan: </h3>
+        <h3 class="p-caption-text">Warna Beras: </h3>
+        <h2 class="p-caption-text">Hasil:</h2>
+        <!-- If 0 Then Full, If 1 then Mixed, if 2 then Broken -->
+        {% if result == 0 %}
+        <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3>
+        {% elif result == 1 %}
+        <h3 class="p-caption-text">Beras tersebut merupakan kualitas medium. Dapat dilihat dari beberapa bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras sedang.</h3>
+        {% elif result == 2 %}
+        <h3 class="p-caption-text">Beras tersebut merupakan kualitas medium dengan banyak beras broken. Dapat dilihat dari dominan beras yang terlihat adalah broken serta warna yang terlihat kuning sehingga dapat dipastikan ini adalah beras medium yang kurang baik.</h3>
+        {% endif %}
+        <!-- <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3> -->
+        <!-- Other Component -->
+        <div class="flex mt-5">
+          <a href="/identifikasi" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Coba Lagi</a>
+     </main>
     <!-- Footer -->
     <footer class="bg-white text-dark p-4">
       <div class="container mx-auto flex justify-between items-center">

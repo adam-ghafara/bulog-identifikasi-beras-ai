@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pengadaan - Identifikasi Kualitas Beras</title>
-    <link rel="stylesheet" href="./assets/globals.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <title>(Prototype) Perum BULOG - Identifikasi Kualitas Beras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/assets/globals.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/assets/style.css')}}" />
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Flowbite Tailwind CSS -->
@@ -15,11 +15,11 @@
     <!-- Header -->
     <header class="bg-white text-dark">
       <div class="container mx-auto flex justify-between items-center">
-        <a href="./index.html" class="text-2xl font-bold"><img src="./assets/images/bulog-logos.png" style="width: 17%;" alt=""></a>
+        <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png')}}" style="width: 17%;" alt=""></a>
         <nav>
           <ul class="flex space-x-4">
-            <li><a href="./identifikasi.html" class="hover:text-gray-300">Identifikasi</a></li>
-            <li><a href="./tentang.html" class="hover:text-gray-300">Tentang</a></li>
+            <li><a href="/identifikasi" class="hover:text-gray-300">Identifikasi</a></li>
+            <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
           </ul>
         </nav>
       </div>
@@ -29,7 +29,7 @@
       <div class="container mx-auto py-20">
         <h1 class="text-4xl font-bold">Identifikasi Kualitas Beras</h1>
         <p class="text-lg">Ini adalah Web Prototipe sebagai pengembangan awal dari aplikasi Identifikasi Beras berbasis AI yang akan dirancang. Silahkan mencoba untuk Melakukan Identifikasi Kualitas Beras.</p>
-        <a href="./identifikasi.html">
+        <a href="/identifikasi">
           <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Coba</button>
         </a>
       </div>

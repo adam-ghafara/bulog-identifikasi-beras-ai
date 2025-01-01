@@ -1,13 +1,12 @@
 import base64
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
-from keras.preprocessing import image
 from PIL import Image
 import numpy as np
 import io
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 ########################
 #### 
@@ -48,7 +47,7 @@ def identify():
         if file:
             img = Image.open(io.BytesIO(file.read()))
             # Preprocess the image
-            preprocessed_image = prepare_image(img, target=(256, 256))
+            preprocessed_image = image_loader(img, target=(256, 256))
             preprocessed_image = np.array(preprocessed_image, dtype='float32')
             # Predict the image
             prediction = model.predict(preprocessed_image)
