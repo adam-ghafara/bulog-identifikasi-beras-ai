@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>(Prototype) Perum BULOG - Identifikasi Kualitas Beras</title>
+    <title>(Prototipe) Perum BULOG - Tentang Web</title>
+    <!-- <link rel="stylesheet" href="../static/assets/globals.css">
+    <link rel="stylesheet" href="../static/assets/style.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='/assets/globals.css')}}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/assets/style.css')}}" />
     <!-- Tailwind CSS -->
@@ -15,6 +17,7 @@
     <!-- Header -->
     <header class="bg-white text-dark">
       <div class="container mx-auto flex justify-between items-center">
+        <!-- <a href="/" class="text-2xl font-bold"><img src="../static/assets/images/bulog-logos.png" style="width: 17%;" alt=""></a> -->
         <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png')}}" style="width: 17%;" alt=""></a>
         <nav>
           <ul class="flex space-x-4">
@@ -26,13 +29,30 @@
     </header>
     <!-- About Page -->
     <main class="about-page">
-      <section class="about-section">
-        <h2 class="main-title">Tentang</h2>
-        <p class="p-caption-text">Web Prototipe ini adalah pengembangan awal (Prototipe) dari aplikasi Identifikasi Beras berbasis AI yang akan dirancang. Aplikasi ini bertujuan untuk membantu masyarakat serta instansi dalam mengidentifikasi kualitas komoditi beras yang dimiliki. Dengan menggunakan teknologi AI, aplikasi ini dapat mengidentifikasi kualitas beras berdasarkan gambar yang diunggah oleh pengguna.</p>
-        <h3 class="p-caption-text">Web ini dibuatkan dalam rangka untuk memenuhi prosedur kegiatan magang di PT Perum Bulog sekaligus menjadi donatur teknologi untuk PT Perum Bulog.</h3>
-        <h3 class="p-caption-text">Web ini dibuat oleh:</h3>
-        <ul class="p-caption-text">
-          <li>Adam Ghafara</li>
+    <section class="about-section">
+        <div class="container mx-auto py-5 pl-24 pr-24">
+            <h2 class="main-title">Tentang</h2>
+            <p class="p-caption-text">Web Prototipe ini adalah pengembangan awal (Prototipe) dari aplikasi Identifikasi Beras berbasis AI yang akan dirancang. Aplikasi ini bertujuan untuk membantu masyarakat serta instansi dalam mengidentifikasi kualitas komoditi beras yang dimiliki. Dengan menggunakan teknologi AI, aplikasi ini dapat mengidentifikasi kualitas beras berdasarkan gambar yang diunggah oleh pengguna.</p>
+            <h3 class="p-caption-text">Web ini dibuatkan dalam rangka untuk memenuhi prosedur kegiatan magang di PT Perum Bulog.</h3>
+            <h3 class="p-caption-text">Web ini tidak keterkaitan erat dengan PT Perum Bulog dan hanya digunakan sebagai penelitian.</h3>
+            <h3 class="h-caption-label">Komponen Web:</h3>
+            <ul class="p-caption-text">
+              <li>AI: Dibuatkan menggunakan teknologi algoritma Convolutional Neural Network (CNN).</li>
+                <li>Web: Dibuatkan menggunakan html dasar, dan dijalankan menggunakan Python Flask.</li>
+                <li>Design: Dibuatkan menggunakan Tailwind CSS dan Flowbite. Beberapa komponen CSS dibuat secara lokal.</li>
+                <li>Hosting: Dihosting menggunakan Heroku.</li>
+            </ul>
+            <h3 class="p-caption-text">Dibuat oleh:</h3>
+            <ul class="p-caption-text">
+              <li>Adam Ghafara</li>
+        </div>
+        <!-- Image on the right side -->
+        <div class="flex items-center justify-center w-full h-100">
+          <!-- <img src="../static/assets/images/about-page-hero.png" style="width: 45ch;" alt="About Image" class="w-96 h-100 object-cover rounded-lg"> -->
+          <img src="{{ url_for('static', filename='assets/images/about-page-hero.png') }}" style="width: 45ch;" alt="About Image" class="w-96 h-100 object-cover rounded-lg">
+        </div>
+    </section>
+    </main>
     <!-- Footer -->
     <footer class="bg-white text-dark py-5">
       <div class="container mx-auto flex justify-between items-center">
