@@ -1,7 +1,6 @@
 import base64
 from flask import Flask, request, render_template
-from keras.models import load_model
-from keras.preprocessing.image import img_to_array
+import tensorflow as tf
 from PIL import Image
 import numpy as np
 import io
@@ -13,13 +12,13 @@ app = Flask(__name__, template_folder='templates')
 #### LOAD MODEL
 ####
 ########################
-model = load_model('./model/rice_model.h5')
+model = tf.keras.models.load_model('./model/rice_model.h5')
 
 class_labels = [0,1,2]
 
 def image_loader(image, target):
     image = image.resize(target)
-    image = img_to_array(image)
+    image = tf.keras.preprocessing.image.img_to_array(image)
     image = np.expand_dims(image, axis=0)
     return image
 
