@@ -18,7 +18,7 @@
         <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
         <nav>
           <ul class="flex space-x-4">
-            <li><a href="/identifikasi" class="hover:text-gray-300">Identifikasi</a></li>
+            <li><a href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
             <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
           </ul>
         </nav>
@@ -31,25 +31,23 @@
         <h4 class="p-caption-text" style="margin-left: 15px;">Masukkan</h4>
         <!-- Upload Container -->
         <div class="flex items-center justify-center w-full h-50">
-          <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ url_for('identify') }}" method="post" enctype="multipart/form-data">
               <label for="dropzone-file" id="dropzone" class="flex flex-col items-center justify-center w-full h-70 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                   <div class="flex flex-col items-center justify-center pt-5 pb-6">
                       <img id="icon" src="{{ url_for('static', filename='/assets/images/icons/file-arrow-up-solid.svg') }}" style="height: 10ch;" alt="Upload Icon">
                       <p id="upload-text" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Klik untuk mengupload</span> atau <span class="font-semibold">tarik gambar ke dalam kotak ini</span></p>
                       <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, atau JPG. Direkomendasikan dengan gambar ukuran 256x256px</p>
                   </div>
-                  <input type="file" id="dropzone-file" class="hidden" accept="image/*">
+                  <input type="file" id="dropzone-file" name="image" class="hidden" accept="image/*" required>
                   <div id="preview" class="hidden w-full h-full flex items-center justify-center">
                       <img id="preview-image" class="max-h-full max-w-full object-contain" />
                   </div>
               </label>
-              <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" accept="image/*">
-            </div>
               <div class="flex justify-center mt-5">
                   <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Identifikasi</button>
               </div>
-            </form>
-          </div>
+          </form>
+      </div>
         </section>
       </main>
     <!-- Footer -->

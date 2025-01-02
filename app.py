@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder='templates')
 #### LOAD MODEL
 ####
 ########################
-model = load_model('model.h5')
+model = load_model('./model/rice_model.h5')
 
 class_labels = [0,1,2]
 
@@ -60,7 +60,7 @@ def identify():
             image_render = image_stream.getvalue()
             image_render = "data:image/png;base64," + base64.b64encode(image_render).decode('utf-8')
             model_accuracy = prediction[0][predicted_class] * 100
-            return render_template('hasil-identifikasi.html', image=image_render, predicted_class=predicted_class, model_accuracy=model_accuracy)
+            return render_template('hasil-identifikasi.html', image=image_render, predicted_class=predicted_class, final_accuracy=model_accuracy)
     return render_template('identifikasi.html')
 
 if __name__ == '__main__':

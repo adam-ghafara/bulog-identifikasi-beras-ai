@@ -1,6 +1,5 @@
 const dropzone = document.getElementById('dropzone');
 const dropzoneInput = document.getElementById('dropzone-file');
-const fileInput = document.getElementById('file_input');
 const preview = document.getElementById('preview');
 const previewImage = document.getElementById('preview-image');
 const uploadText = document.getElementById('upload-text');
@@ -22,13 +21,6 @@ function handleFileUpload(file) {
 dropzoneInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     handleFileUpload(file);
-    fileInput.files = event.target.files;
-});
-
-fileInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    handleFileUpload(file);
-    dropzoneInput.files = event.target.files;
 });
 
 dropzone.addEventListener('dragover', (event) => {
@@ -40,5 +32,4 @@ dropzone.addEventListener('drop', (event) => {
     const file = event.dataTransfer.files[0];
     handleFileUpload(file);
     dropzoneInput.files = event.dataTransfer.files;
-    fileInput.files = event.dataTransfer.files;
 });
