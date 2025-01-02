@@ -12,6 +12,10 @@ app = Flask(__name__, template_folder='templates')
 #### LOAD MODEL
 ####
 ########################
+
+## This variable is meant to be used to load the model from Google Drive, but it is not working in this case. Use this variable wisely to avoid unnecessary errors.
+# model_url='https://drive.google.com/file/d/1R44ysaM2ldbSXfWNecUdj2iN_GMThHFS/view?usp=sharing'
+
 model = tf.keras.models.load_model('./model/rice_model.h5')
 
 class_labels = [0,1,2]

@@ -28,52 +28,55 @@
      <main class="identify-page">
       <section class="identification-section">
         <h2 class="main-title">Hasil Identifikasi Kualitas Beras</h2>
-        <div class="flex items-center justify-center w-full h-50">
-          <img src="{{ image }}" alt="Beras" class="w-96 h-96 object-cover rounded-lg">
+        <!-- Image Result -->
+        <div class="flex items-center justify-center">
+          <img src="{{ image }}" style="height: 40ch;" class="object-contain rounded-3xl border-4 border-gray-600" />
         </div>
-        <h3 class="h-caption-label">Hasil Identifikasi</h3>
-        {% if predicted_class == 0 %}
-        <h3 class="p-caption-text">
-          Kondisi Beras Dominan: Full
-        </h3>
-        {% elif predicted_class == 1 %}
-        <h3 class="p-caption-text">
-          Kondisi Beras Dominan: Mixed
-        </h3>
-        {% elif predicted_class == 2 %}
-        <h3 class="p-caption-text">
-          Kondisi Beras Dominan: Broken
-        </h3>
-        {% endif %}
-        <!-- <h3 class="p-caption-text">Kondisi Beras Dominan: 
-        </h3> -->
-        {% if predicted_class == 0 %}
-        <h3 class="p-caption-text">Warna Beras: Putih
-        </h3>
-        {% elif predicted_class == 1 %}
-        <h3 class="p-caption-text">Warna Beras: Putih
-        </h3>
-        {% elif predicted_class == 2 %}
-        <h3 class="p-caption-text">Warna Beras: Kuning
-        </h3>
-        {% endif %}
-        <!-- <h3 class="p-caption-text">Warna Beras:
-        </h3> -->
-        <h2 class="p-caption-text">Hasil:</h2>
-        <!-- If 0 Then Full, If 1 then Mixed, if 2 then Broken -->
-        {% if predicted_class == 0 %}
-        <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak kuning sehingga dapat dipastikan ini adalah beras premium.</h3>
-        {% elif predicted_class == 1 %}
-        <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium dengan broken. Dapat dilihat dari beberapa bulir yang broken serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium dengan broken.</h3>
-        {% elif predicted_class == 2 %}
-        <h3 class="p-caption-text">Beras tersebut merupakan kualitas medium dengan banyak beras broken. Dapat dilihat dari dominan beras yang terlihat adalah broken serta warna yang terlihat kuning sehingga dapat dipastikan ini adalah beras medium yang kurang baik.</h3>
-        {% endif %}
-        <!-- <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3> -->
-        <!-- Other Component -->
-         <!-- Accuracy and AI result -->
-        <h3 class="p-caption-text">Akurasi: {{ final_accuracy }} %</h3>
-        <div class="flex mt-5">
+        <div class="container mx-auto py-5 pl-16 pr-16">
+          {% if predicted_class == 0 %}
+          <h3 class="p-caption-text">
+            Kondisi Beras: Full
+          </h3>
+          {% elif predicted_class == 1 %}
+          <h3 class="p-caption-text">
+            Kondisi Beras: Mixed
+          </h3>
+          {% elif predicted_class == 2 %}
+          <h3 class="p-caption-text">
+            Kondisi Beras: Broken
+          </h3>
+          {% endif %}
+          <!-- <h3 class="p-caption-text">Kondisi Beras Dominan: 
+          </h3> -->
+          {% if predicted_class == 0 %}
+          <h3 class="p-caption-text">Warna Beras: Putih
+          </h3>
+          {% elif predicted_class == 1 %}
+          <h3 class="p-caption-text">Warna Beras: Putih
+          </h3>
+          {% elif predicted_class == 2 %}
+          <h3 class="p-caption-text">Warna Beras: Kuning
+          </h3>
+          {% endif %}
+          <!-- <h3 class="p-caption-text">Warna Beras:
+          </h3> -->
+          <h2 class="p-caption-text">Hasil:</h2>
+          <!-- If 0 Then Full, If 1 then Mixed, if 2 then Broken -->
+          {% if predicted_class == 0 %}
+          <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak kuning sehingga dapat dipastikan ini adalah beras premium.</h3>
+          {% elif predicted_class == 1 %}
+          <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium dengan broken. Dapat dilihat dari beberapa bulir yang broken serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium dengan broken.</h3>
+          {% elif predicted_class == 2 %}
+          <h3 class="p-caption-text">Beras tersebut merupakan kualitas medium dengan banyak beras broken. Dapat dilihat dari dominan beras yang terlihat adalah broken serta warna yang terlihat kuning sehingga dapat dipastikan ini adalah beras medium yang kurang baik.</h3>
+          {% endif %}
+          <!-- <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3> -->
+          <!-- Other Component -->
+           <!-- Accuracy and AI result -->
+          <h3 class="p-caption-text">Akurasi: {{ final_accuracy }} %</h3>
+        </div>
+        <div class="flex mt-5 pl-16 pr-56">
           <a href="/identify" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Coba Lagi</a>
+        </div>
      </main>
     <!-- Footer -->
     <footer class="bg-white text-dark p-4">
