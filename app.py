@@ -42,6 +42,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/identify-feedback')
+def identify_feedback():
+    return render_template('feedback.html')
+
 # Identify page
 @app.route('/identify', methods=['GET', 'POST'])
 def identify():

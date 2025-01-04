@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(Prototipe) Perum BULOG - Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/assets/globals.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/assets/style.css') }}">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Flowbite Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white text-dark">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
+                    <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Feedback Page -->
+    <main class="about-page">
+        <section class="about-section">
+            <div class="container mx-auto py-5 pl-24 pr-24">
+                <h2 class="main-title">Feedback</h2>
+                <p class="p-caption-text text-center ml-16">Kami sangat menghargai setiap masukan dan saran yang diberikan oleh pengguna. Silahkan isi form di bawah ini untuk memberikan feedback kepada kami.</p>
+                <div class="container mx-auto flex justify-center items-center" style="background-color: aliceblue; padding: 20px; border-radius: 10px;">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyrXM-oVCATIHGosOwkkKdgI-VBN8bn7jwm0-mhh_qPt7zIQ/viewform?embedded=true" width="1024" height="1225" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                </div>
+            </div>
+        </section>
+        </main>
+    <!-- Footer -->
+    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">PT Perum BULOG Indonesia</a>
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
+            </li>
+            <li>
+                <a href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+</body>
+</html>
