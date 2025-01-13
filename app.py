@@ -20,6 +20,7 @@ app = Flask(__name__, template_folder='templates')
 #     for chunk in response.iter_content(1024):
 #         if chunk:
 #             file.write(chunk)
+# https://drive.google.com/file/d/1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD/view?usp=sharing
 
 # Load The Model from the URL directory
 # model_from_url = tf.keras.models.load_model(model_loader)
@@ -28,7 +29,8 @@ app = Flask(__name__, template_folder='templates')
 # step_2 = tf.keras.models.load_model('./model/rice_model.h5')
 # step_3 = tf.keras.models.load_model('./model/rice_model.h5')
 
-model = tf.keras.models.load_model('./model/model_1_process_2.h5')
+# model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD')
+model = tf.keras.models.load_model('../model/rice_model.h5')
 
 class_labels = [0,1,2]
 
@@ -67,7 +69,7 @@ def identify():
             img = Image.open(io.BytesIO(file.read()))
             # Preprocess the image
             preprocessed_image = image_loader(img, target=(256, 256))
-            preprocessed_image = np.array(preprocessed_image, dtype='float32')
+            preprocessed_image = np.array(preprocessed_image) / 255.0
             # Predict the image
             prediction = model.predict(preprocessed_image)
             # Get class with highest probability
@@ -78,7 +80,7 @@ def identify():
             img.save(image_stream, format='PNG')
             image_render = image_stream.getvalue()
             image_render = "data:image/png;base64," + base64.b64encode(image_render).decode('utf-8')
-            model_accuracy = prediction[0][predicted_class] * 100
+            model_accuracy = np.max(prediction) * 100
             return render_template('hasil-identifikasi.html', image=image_render, predicted_class=predicted_class, final_accuracy=model_accuracy)
     return render_template('identifikasi.html')
 
