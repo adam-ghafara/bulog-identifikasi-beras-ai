@@ -1,0 +1,6 @@
+# Ignore Filetypes
+
+# Ignore Filenames
+model/model_1_process_2.h5
+
+# Ignore Directories

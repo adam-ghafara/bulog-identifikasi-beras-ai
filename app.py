@@ -28,7 +28,7 @@ app = Flask(__name__, template_folder='templates')
 # step_2 = tf.keras.models.load_model('./model/rice_model.h5')
 # step_3 = tf.keras.models.load_model('./model/rice_model.h5')
 
-model = tf.keras.models.load_model('./model/rice_model.h5')
+model = tf.keras.models.load_model('./model/model_1_process_2.h5')
 
 class_labels = [0,1,2]
 
