@@ -29,8 +29,8 @@ app = Flask(__name__, template_folder='templates')
 # step_2 = tf.keras.models.load_model('./model/rice_model.h5')
 # step_3 = tf.keras.models.load_model('./model/rice_model.h5')
 
-# model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD')
-model = tf.keras.models.load_model('../model/rice_model.h5')
+model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD')
+# model = tf.keras.models.load_model('../model/rice_model.h5')
 
 class_labels = [0,1,2]
 
