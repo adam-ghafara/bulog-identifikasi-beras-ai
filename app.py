@@ -29,8 +29,8 @@ app = Flask(__name__, template_folder='templates')
 # step_2 = tf.keras.models.load_model('./model/rice_model.h5')
 # step_3 = tf.keras.models.load_model('./model/rice_model.h5')
 
-model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD')
-# model = tf.keras.models.load_model('../model/rice_model.h5')
+# model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=1zpvntZFxBHfPFcfk_5qypF4Q5Anqe2dD')
+model = tf.keras.models.load_model('../model/final_model_rice.h5')
 
 class_labels = [0,1,2]
 
@@ -66,7 +66,7 @@ def identify():
     if request.method == 'POST':
         file = request.files['image']
         if file:
-            img = Image.open(io.BytesIO(file.read()))
+            img = Image.open(io.BytesIO(file.read())).convert('RGB')
             # Preprocess the image
             preprocessed_image = image_loader(img, target=(256, 256))
             preprocessed_image = np.array(preprocessed_image) / 255.0
