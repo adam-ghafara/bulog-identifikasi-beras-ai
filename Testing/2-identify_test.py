@@ -49,11 +49,9 @@ class IdentifyTest(unittest.TestCase):
         self.assertEqual(self.driver.find_element(
           By.ID, 'image-display').is_displayed(), True
         )
-
         self.assertEqual(self.driver.find_element(
           By.ID, 'kondisi-beras').is_displayed(), True
         )
-        
         self.assertEqual(self.driver.find_element(
           By.ID, 'kondisi-beras').is_displayed(), True
         )
@@ -64,7 +62,7 @@ class IdentifyTest(unittest.TestCase):
           By.ID, 'kesimpulan-beras').is_displayed(), True
         )
         self.assertEqual(self.driver.find_element(
-          By.ID, 'acccuracy-display').is_displayed(), True
+          By.ID, 'accuracy-display').is_displayed(), True
         )
         time.sleep(5)
 
@@ -77,7 +75,10 @@ class IdentifyTest(unittest.TestCase):
 
         self.driver.find_element(By.ID, 'identification-start').click()
         time.sleep(10)
-    
+
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'image-display').is_displayed(), True
+        )
         self.assertEqual(self.driver.find_element(
           By.ID, 'kondisi-beras').is_displayed(), True
         )
@@ -95,18 +96,29 @@ class IdentifyTest(unittest.TestCase):
         # Third test
         self.driver.find_element(By.ID, 'identify-re').click()
 
-        self.driver.find_element(By.ID, 'dropzone-file').send_keys(os.path.abspath('C:/Users/adamg/Desktop/AI AND DATASET/Rice Model/Test Samples/Gambar WhatsApp 2025-01-09 pukul 20.47.18_433dfa5d.jpg'))
+        self.driver.find_element(By.ID, 'dropzone-file').send_keys(os.path.abspath('C:/Users/adamg/Desktop/AI AND DATASET/Rice Model/Test Samples/Gambar WhatsApp 2025-01-09 pukul 20.47.21_c3fffd89.jpg'))
         time.sleep(5)
         
         self.driver.find_element(By.ID, 'identification-start').click()
         time.sleep(10)
         
-        self.assertEqual(self.driver.find_element(By.ID, 'kondisi-beras').is_displayed(), True)
-        self.assertEqual(self.driver.find_element(By.ID, 'warna-beras').is_displayed(), True)
-        self.assertEqual(self.driver.find_element(By.ID, 'kesimpulan-beras').is_displayed(), True)
-        self.assertEqual(self.driver.find_element(By.ID, 'accuracy-display').is_displayed(), True)
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'image-display').is_displayed(), True
+        )
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'kondisi-beras').is_displayed(), True
+        )
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'warna-beras').is_displayed(), True
+        )
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'kesimpulan-beras').is_displayed(), True
+        )
+        self.assertEqual(self.driver.find_element(
+          By.ID, 'accuracy-display').is_displayed(), True
+        )
         time.sleep(5)
-        
+
         self.driver.find_element(By.ID, 'index-button').click()
         time.sleep(7) 
     
