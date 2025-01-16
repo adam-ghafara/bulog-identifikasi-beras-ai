@@ -17,18 +17,18 @@
     <!-- Header -->
     <header class="bg-white text-dark fixed top-0 left-0 w-full z-10">
       <div class="container mx-auto flex justify-between items-center">
-          <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
+        <a id="index-button" href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
           <nav>
-              <ul class="flex space-x-4">
-                  <li><a href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
-                  <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
-              </ul>
+            <ul class="flex space-x-4">
+              <li><a id="identify-bar" href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
+              <li><a id="about-bar" href="/about" class="hover:text-gray-300">Tentang</a></li>
+            </ul>
           </nav>
       </div>
   </header>
     <!-- About Page -->
     <main class="about-page">
-    <section class="about-section">
+    <section class="about-section" style="padding-top: 5ch;">
         <div class="container mx-auto py-5 pl-24 pr-24">
             <h2 class="main-title">Tentang</h2>
             <p class="p-caption-text">Web Prototipe ini adalah pengembangan awal (Prototipe) dari aplikasi Identifikasi Beras berbasis AI yang akan dirancang. Aplikasi ini bertujuan untuk membantu masyarakat serta instansi dalam mengidentifikasi kualitas komoditi beras yang dimiliki. Dengan menggunakan teknologi AI, aplikasi ini dapat mengidentifikasi kualitas beras berdasarkan gambar yang diunggah oleh pengguna.</p>
@@ -38,7 +38,6 @@
             <ul class="p-caption-text">
               <li>AI: Dibuatkan menggunakan Tensorflow Keras yang dikembangkan menggunakan algoritma Convolutional Neural Network (CNN).</li>
                 <li>Web: Dibuatkan menggunakan html dasar, dan dijalankan menggunakan Python Flask.</li>
-                <li>Hosting: Dihosting menggunakan Heroku.</li>
             </ul>
             <h3 class="p-caption-text">Dibuat oleh:</h3>
             <ul class="p-caption-text">
@@ -59,10 +58,10 @@
       </span>
       <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
-              <a href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
+              <a id="about-footer" href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
           </li>
           <li>
-              <a href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
+              <a id="feedback-footer" href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
           </li>
         </ul>
       </div>

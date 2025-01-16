@@ -15,11 +15,11 @@
     <!-- Header -->
     <header class="bg-white text-dark fixed top-0 left-0 w-full z-10">
       <div class="container mx-auto flex justify-between items-center">
-          <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
+          <a id="index-button" href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
           <nav>
               <ul class="flex space-x-4">
-                  <li><a href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
-                  <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
+                  <li><a id="identify-bar" href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
+                  <li><a id="about-bar" href="/about" class="hover:text-gray-300">Tentang</a></li>
               </ul>
           </nav>
       </div>
@@ -46,12 +46,12 @@
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 PT Perum BULOG Indonesia
       </span>
       <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-              <a href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
-          </li>
-          <li>
-              <a href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
-          </li>
+        <li>
+          <a id="about-footer" href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
+      </li>
+      <li>
+          <a id="feedback-footer" href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
+      </li>
         </ul>
       </div>
     </footer>

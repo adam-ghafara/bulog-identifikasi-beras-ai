@@ -15,12 +15,12 @@
     <!-- Header -->
     <header class="bg-white text-dark fixed top-0 left-0 w-full z-10">
       <div class="container mx-auto flex justify-between items-center">
-          <a href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
+        <a id="index-button" href="/" class="text-2xl font-bold"><img src="{{ url_for('static', filename='/assets/images/bulog-logos.png') }}" style="width: 17%;" alt=""></a>
           <nav>
-              <ul class="flex space-x-4">
-                  <li><a href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
-                  <li><a href="/about" class="hover:text-gray-300">Tentang</a></li>
-              </ul>
+            <ul class="flex space-x-4">
+              <li><a id="identify-bar" href="/identify" class="hover:text-gray-300">Identifikasi</a></li>
+              <li><a id="about-bar" href="/about" class="hover:text-gray-300">Tentang</a></li>
+            </ul>
           </nav>
       </div>
   </header>
@@ -30,7 +30,7 @@
         <h2 class="main-title">Hasil Identifikasi Kualitas Beras</h2>
         <!-- Image Result -->
         <div class="flex items-center justify-center">
-          <img src="{{ image }}" style="height: 40ch;" class="object-contain rounded-3xl border-4 border-gray-600" />
+          <img id="image-display" src="{{ image }}" style="height: 40ch;" class="object-contain rounded-3xl border-4 border-gray-600" />
         </div>
         <div class="container mx-auto py-5 pl-16 pr-16">
           {% if predicted_class == 0 %}
@@ -72,11 +72,11 @@
           <!-- <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3> -->
           <!-- Other Component -->
            <!-- Accuracy and AI result -->
-          <h3 class="p-caption-text">Akurasi: {{ final_accuracy }} %</h3>
+          <h3 id="accuracy-display" class="p-caption-text">Akurasi: {{ final_accuracy }} %</h3>
         </div>
         <div class="flex mt-5 pl-16 pr-56">
-          <a href="/identify" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Coba Lagi</a>
-          <a href="/identify-feedback"><button class="text-white bg-blue-500 border border-blue-500 focus:outline-none hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-700 dark:border-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-700">Feedback</button>
+          <a id="identify-re" href="/identify" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Coba Lagi</a>
+          <a id="feedback-di" href="/identify-feedback"><button class="text-white bg-blue-500 border border-blue-500 focus:outline-none hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-700 dark:border-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-700">Feedback</button>
           </a>
         </div>
       </section>
@@ -87,12 +87,12 @@
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 PT Perum BULOG Indonesia
       </span>
       <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-              <a href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
-          </li>
-          <li>
-              <a href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
-          </li>
+        <li>
+          <a id="about-footer" href="/about" class="hover:underline me-4 md:me-6">Tentang</a>
+      </li>
+      <li>
+          <a id="feedback-footer" href="/identify-feedback" class="hover:underline me-4 md:me-6">Feedback</a>
+      </li>
         </ul>
       </div>
     </footer>
