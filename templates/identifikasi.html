@@ -31,7 +31,7 @@
         <p class="p-caption-text">Pastikan sampel beras yang akan diidentifikasi terlihat jelas, direkomendasikan menggunakan gambar ukuran 256x256px.</p>
         <!-- Upload Container -->
         <div class="flex items-center justify-center w-full h-50">
-          <form action="{{ url_for('identify') }}" method="post" enctype="multipart/form-data">
+          <form id="submit-images" action="{{ url_for('identify') }}" method="post" enctype="multipart/form-data">
               <label for="dropzone-file" id="dropzone" class="flex flex-col items-center justify-center w-full h-70 p-20 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                   <div class="flex flex-col items-center justify-center pt-5 pb-6">
                       <img id="icon" src="{{ url_for('static', filename='/assets/images/icons/file-arrow-up-solid.svg') }}" style="height: 10ch; margin-bottom: 5ch;" alt="Upload Icon">
@@ -44,7 +44,7 @@
                   </div>
               </label>
               <div class="flex justify-center mt-5">
-                  <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Identifikasi</button>
+                  <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="identification-start">Identifikasi</button>
               </div>
           </form>
       </div>

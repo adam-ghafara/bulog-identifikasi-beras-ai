@@ -34,41 +34,40 @@
         </div>
         <div class="container mx-auto py-5 pl-16 pr-16">
           {% if predicted_class == 0 %}
-          <h3 class="p-caption-text">
+          <h3 class="p-caption-text" id="kondisi-beras">
             Kondisi Beras: Broken >25%
           </h3>
           {% elif predicted_class == 1 %}
-          <h3 class="p-caption-text">
+          <h3 class="p-caption-text" id="kondisi-beras">
             Kondisi Beras: Full ( Broken (<=15%) )
           </h3>
           {% elif predicted_class == 2 %}
-          <h3 class="p-caption-text">
+          <h3 class="p-caption-text" id="kondisi-beras">
             Kondisi Beras: Mixed ( Broken (>=15%) )
           </h3>
           {% endif %}
           <!-- <h3 class="p-caption-text">Kondisi Beras Dominan: 
           </h3> -->
           {% if predicted_class == 0 %}
-          <h3 class="p-caption-text">Warna Beras: Putih
+          <h3 class="p-caption-text" id="warna-beras">Warna Beras: Putih
           </h3>
           {% elif predicted_class == 1 %}
-          <h3 class="p-caption-text">Warna Beras: Putih
+          <h3 class="p-caption-text" id="warna-beras">Warna Beras: Putih
           </h3>
           {% elif predicted_class == 2 %}
-          <h3 class="p-caption-text">Warna Beras: Putih
+          <h3 class="p-caption-text" id="warna-beras">Warna Beras: Putih
           </h3>
           {% endif %}
           <!-- <h3 class="p-caption-text">Warna Beras:
           </h3> -->
           <h2 class="p-caption-text">Hasil:</h2>
-          <!-- If 0 Then Full, If 1 then Mixed, if 2 then Broken -->
           {% if predicted_class == 0 %}
-          <h3 class="p-caption-text">Beras tersebut berkualitas Medium. Beras ini merupakan beras berkualitas paling rendah dibanding berbagai beras medium lainnya karena memiliki jumlah beras patah yang lebih banyak ( Broken (>25%) )</h3>
+          <h3 class="p-caption-text" id="kesimpulan-beras">Beras tersebut berkualitas Medium. Beras ini merupakan beras berkualitas paling rendah dibanding berbagai beras medium lainnya karena memiliki jumlah beras patah yang lebih banyak ( Broken (>25%) )</h3>
           {% elif predicted_class == 1 %}
-          <h3 class="p-caption-text">Ini adalah Beras Premium. Dapat diketahui dengan jumlah butir patah yang lebih sedikit ( Broken (<=15%) ) sehingga dapat dipastikan ini adalah beras premium.
+          <h3 class="p-caption-text" id="kesimpulan-beras">Ini adalah Beras Premium. Dapat diketahui dengan jumlah butir patah yang lebih sedikit ( Broken (<=15%) ) sehingga dapat dipastikan ini adalah beras premium.
           </h3>
           {% elif predicted_class == 2 %}
-          <h3 class="p-caption-text">Beras tersebut dapat berkualitas Medium atau Premium. Beras Medium ini memiliki jumlah beras patah sebanyak 15% atau lebih dari keseluruhan beras yang ada. Perlu diperhatikan tidak semua beras dengan jumlah patah yang tidak sedikit bukan berarti ini merupakan Beras Medium. Coba lakukan sorting dengan menggunakan alat penyaring (saringan, mesin ayakan, dsb) untuk memastikan jumlah beras patah lebih banyak atau sedikit.</h3>
+          <h3 class="p-caption-text" id="kesimpulan-beras">Beras tersebut dapat berkualitas Medium atau Premium. Beras Medium ini memiliki jumlah beras patah sebanyak 15% atau lebih dari keseluruhan beras yang ada. Perlu diperhatikan tidak semua beras dengan jumlah patah yang tidak sedikit bukan berarti ini merupakan Beras Medium. Coba lakukan sorting dengan menggunakan alat penyaring (saringan, mesin ayakan, dsb) untuk memastikan jumlah beras patah lebih banyak atau sedikit.</h3>
           {% endif %}
           <!-- <h3 class="p-caption-text">Beras tersebut merupakan kualitas premium. Dapat dilihat dari banyak bulir yang utuh serta warna yang tidak terlihat kuning sehingga dapat dipastikan ini adalah beras premium.</h3> -->
           <!-- Other Component -->
