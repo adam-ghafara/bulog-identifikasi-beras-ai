@@ -4,7 +4,6 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import io
-import requests
 
 app = Flask(__name__, template_folder='templates')
 
@@ -74,4 +73,4 @@ def identify():
     return render_template('identifikasi.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
